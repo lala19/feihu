@@ -313,11 +313,73 @@ body{ background:#fafafa; }
 }
 .footer{
   background: #fff;
-  height:345px;
   margin-top:30px;
-  .footer-con{
-    height:345px;
-    background:url("../images/bottom_08.jpg") no-repeat center #fff;
+  padding-top:20px;
+  .service {
+    float: left;
+    width: 250px;
+    padding-top: 20px;
+    color: #999;
+    .service_tel {
+      padding-left: 35px;
+      line-height: 24px;
+      vertical-align: middle;
+      strong{
+        font-size: 16px;
+        color: #333;
+        font-weight: normal;
+      }
+    }
+    .service_time{
+      position:relative;
+      padding-top:6px;
+      padding-left:100px;
+      .time{
+        padding-top:8px;
+        em{
+          color: #FF6600;
+          font-style:normal;
+        }
+      }
+      .icon {
+        position: absolute;
+        left: 40px;
+        top: 8px;
+        width: 52px;
+        height: 50px;
+        background: url(../images/goodsinfo/sl_footer.png?v=0516) no-repeat 0 -47px;
+      }
+    }
+  }
+  .service_guide{
+    dl {
+      float: left;
+      width: 164px;
+      height: 150px;
+      border-left: solid 1px #ddd;
+      padding-left: 15px;
+      dt{
+        height: 22px;
+        line-height: 22px;
+        margin-bottom: 4px;
+        font-size: 14px;
+        color: #000;
+      }
+      dd{
+        height: 20px;
+        line-height: 20px;
+        overflow: hidden;
+        a{color:#999999}
+      }
+    }
+  }
+  .bottom{
+    line-height:18px;
+    color:#999;
+    padding-top:20px;
+    a{
+      color:#666;
+    }
   }
 }
 .fixed{

@@ -17,26 +17,26 @@
         //totop">飞虎<br>首页</li>
         //        <li id="totoday"><img src="images/right_03.jpg" alt=""><p>今日秒杀</p></li>
         //        <li id="togoods
-        $(document).ready(function () {
+        $(document).ready(function(){
             $(".fixed").hide();
-            $(function () {
-                $(window).scroll(function () {
-                    if ($(window).scrollTop() > 300) {
+            $(function(){
+                $(window).scroll(function(){
+                    if($(window).scrollTop() > 300){
                         $(".fixed").show();
                     } else {
                         $(".fixed").hide();
                     }
                 });
-                $("#totop").click(function () {
-                    $('body,html').animate({scrollTop: 0}, 500);
+                $("#totop").click(function(){
+                    $('body,html').animate({scrollTop : 0}, 500);
                 });
-                $("#totoday").click(function () {
+                $("#totoday").click(function(){
                     var top = $(".seckill").offset().top;
-                    $('body,html').animate({scrollTop: top}, 500);
+                    $('body,html').animate({scrollTop : top}, 500);
                 });
-                $("#togoods").click(function () {
+                $("#togoods").click(function(){
                     var top = $(".goods-top").offset().top;
-                    $('body,html').animate({scrollTop: top}, 500);
+                    $('body,html').animate({scrollTop : top}, 500);
                 });
             });
         });
@@ -49,8 +49,7 @@
     <div class="header_t">
         <div class="main">
             <div class="header_t_left">
-                <span>您好，欢迎来到飞虎乐购 <a href="login.html">安全登录</a></span>
-                <span> 还没加入我们？<a href="register.html">免费注册</a></span>
+                <span>您好，欢迎来到飞虎乐购 <a href="login.html">安全登录</a></span> <span> 还没加入我们？<a href="register.html">免费注册</a></span>
             </div>
             <div class="header_t_right">
                 <ul>
@@ -108,65 +107,85 @@
     <div class="main">
         <ul class="nav-item">
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">手机数码</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">手机数码</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">生活电器</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">生活电器</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">厨房电器</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">厨房电器</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">健康电器</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">健康电器</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">个人护理</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">个人护理</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">厨房用具</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">厨房用具</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">家居家纺</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">家居家纺</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">服装鞋帽</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">服装鞋帽</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">钟表首饰</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">钟表首饰</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">洗护美妆</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">洗护美妆</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">汽车用品</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">汽车用品</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">礼品箱包</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">礼品箱包</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">运动健康</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">运动健康</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">母婴玩具</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">母婴玩具</a>
             </li>
             <li>
-                <i class="iconfont">&#xe64c;</i><a href="#">食品健康</a>
+                <i class="iconfont">&#xe64c;</i>
+                <a href="#">食品健康</a>
             </li>
         </ul>
         <div class="slide">
             <!-- Swiper -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background:url('images/banner1_0228.jpg') no-repeat center"><a
-                            href="#"></a></div>
-                    <div class="swiper-slide" style="background:url('images/banner2_0228.jpg') no-repeat center"><a
-                            href="#"></a></div>
-                    <div class="swiper-slide" style="background:url('images/banner3_0228.jpg') no-repeat center"><a
-                            href="#"></a></div>
-                    <div class="swiper-slide" style="background:url('images/banner_0227.jpg') no-repeat center"><a
-                            href="#"></a></div>
-                    <div class="swiper-slide" style="background:url('images/banner_0228.jpg') no-repeat center"><a
-                            href="#"></a></div>
+                    <div class="swiper-slide" style="background:url('images/banner1_0228.jpg') no-repeat center">
+                        <a href="#"></a>
+                    </div>
+                    <div class="swiper-slide" style="background:url('images/banner2_0228.jpg') no-repeat center">
+                        <a href="#"></a>
+                    </div>
+                    <div class="swiper-slide" style="background:url('images/banner3_0228.jpg') no-repeat center">
+                        <a href="#"></a>
+                    </div>
+                    <div class="swiper-slide" style="background:url('images/banner_0227.jpg') no-repeat center">
+                        <a href="#"></a>
+                    </div>
+                    <div class="swiper-slide" style="background:url('images/banner_0228.jpg') no-repeat center">
+                        <a href="#"></a>
+                    </div>
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -272,12 +291,24 @@
         <div class="mobile-phone-title clearfix">
             <h2>手机数码</h2>
             <ul>
-                <li><a href="#">手机</a></li>
-                <li><a href="#">手机配件</a></li>
-                <li><a href="#">摄影摄像</a></li>
-                <li><a href="#">移动电源</a></li>
-                <li><a href="#">智能设备</a></li>
-                <li><a href="#">更多商品〉</a></li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">手机配件</a>
+                </li>
+                <li>
+                    <a href="#">摄影摄像</a>
+                </li>
+                <li>
+                    <a href="#">移动电源</a>
+                </li>
+                <li>
+                    <a href="#">智能设备</a>
+                </li>
+                <li>
+                    <a href="#">更多商品〉</a>
+                </li>
             </ul>
         </div>
         <div class="mobile-phone-con clearfix">
@@ -404,12 +435,24 @@
         <div class="mobile-phone-title clearfix">
             <h2>手机数码</h2>
             <ul>
-                <li><a href="#">手机</a></li>
-                <li><a href="#">手机配件</a></li>
-                <li><a href="#">摄影摄像</a></li>
-                <li><a href="#">移动电源</a></li>
-                <li><a href="#">智能设备</a></li>
-                <li><a href="#">更多商品〉</a></li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">手机配件</a>
+                </li>
+                <li>
+                    <a href="#">摄影摄像</a>
+                </li>
+                <li>
+                    <a href="#">移动电源</a>
+                </li>
+                <li>
+                    <a href="#">智能设备</a>
+                </li>
+                <li>
+                    <a href="#">更多商品〉</a>
+                </li>
             </ul>
         </div>
         <div class="mobile-phone-con clearfix">
@@ -535,12 +578,24 @@
         <div class="mobile-phone-title clearfix">
             <h2>手机数码</h2>
             <ul>
-                <li><a href="#">手机</a></li>
-                <li><a href="#">手机配件</a></li>
-                <li><a href="#">摄影摄像</a></li>
-                <li><a href="#">移动电源</a></li>
-                <li><a href="#">智能设备</a></li>
-                <li><a href="#">更多商品〉</a></li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">手机配件</a>
+                </li>
+                <li>
+                    <a href="#">摄影摄像</a>
+                </li>
+                <li>
+                    <a href="#">移动电源</a>
+                </li>
+                <li>
+                    <a href="#">智能设备</a>
+                </li>
+                <li>
+                    <a href="#">更多商品〉</a>
+                </li>
             </ul>
         </div>
         <div class="mobile-phone-con clearfix">
@@ -666,12 +721,24 @@
         <div class="mobile-phone-title clearfix">
             <h2>手机数码</h2>
             <ul>
-                <li><a href="#">手机</a></li>
-                <li><a href="#">手机配件</a></li>
-                <li><a href="#">摄影摄像</a></li>
-                <li><a href="#">移动电源</a></li>
-                <li><a href="#">智能设备</a></li>
-                <li><a href="#">更多商品〉</a></li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">手机配件</a>
+                </li>
+                <li>
+                    <a href="#">摄影摄像</a>
+                </li>
+                <li>
+                    <a href="#">移动电源</a>
+                </li>
+                <li>
+                    <a href="#">智能设备</a>
+                </li>
+                <li>
+                    <a href="#">更多商品〉</a>
+                </li>
             </ul>
         </div>
         <div class="mobile-phone-con clearfix">
@@ -797,12 +864,24 @@
         <div class="mobile-phone-title clearfix">
             <h2>手机数码</h2>
             <ul>
-                <li><a href="#">手机</a></li>
-                <li><a href="#">手机配件</a></li>
-                <li><a href="#">摄影摄像</a></li>
-                <li><a href="#">移动电源</a></li>
-                <li><a href="#">智能设备</a></li>
-                <li><a href="#">更多商品〉</a></li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">手机配件</a>
+                </li>
+                <li>
+                    <a href="#">摄影摄像</a>
+                </li>
+                <li>
+                    <a href="#">移动电源</a>
+                </li>
+                <li>
+                    <a href="#">智能设备</a>
+                </li>
+                <li>
+                    <a href="#">更多商品〉</a>
+                </li>
             </ul>
         </div>
         <div class="mobile-phone-con clearfix">
@@ -928,12 +1007,24 @@
         <div class="mobile-phone-title clearfix">
             <h2>手机数码</h2>
             <ul>
-                <li><a href="#">手机</a></li>
-                <li><a href="#">手机配件</a></li>
-                <li><a href="#">摄影摄像</a></li>
-                <li><a href="#">移动电源</a></li>
-                <li><a href="#">智能设备</a></li>
-                <li><a href="#">更多商品〉</a></li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">手机配件</a>
+                </li>
+                <li>
+                    <a href="#">摄影摄像</a>
+                </li>
+                <li>
+                    <a href="#">移动电源</a>
+                </li>
+                <li>
+                    <a href="#">智能设备</a>
+                </li>
+                <li>
+                    <a href="#">更多商品〉</a>
+                </li>
             </ul>
         </div>
         <div class="mobile-phone-con clearfix">
@@ -1059,12 +1150,24 @@
         <div class="mobile-phone-title clearfix">
             <h2>手机数码</h2>
             <ul>
-                <li><a href="#">手机</a></li>
-                <li><a href="#">手机配件</a></li>
-                <li><a href="#">摄影摄像</a></li>
-                <li><a href="#">移动电源</a></li>
-                <li><a href="#">智能设备</a></li>
-                <li><a href="#">更多商品〉</a></li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">手机配件</a>
+                </li>
+                <li>
+                    <a href="#">摄影摄像</a>
+                </li>
+                <li>
+                    <a href="#">移动电源</a>
+                </li>
+                <li>
+                    <a href="#">智能设备</a>
+                </li>
+                <li>
+                    <a href="#">更多商品〉</a>
+                </li>
             </ul>
         </div>
         <div class="mobile-phone-con clearfix">
@@ -1186,26 +1289,154 @@
     </div>
 </div>
 <div class="footer">
-    <div class="main footer-con"></div>
+    <div class="main">
+        <div class="service">
+            <p class="service_tel">订购/咨询热线：<strong>400-883-6900</strong></p>
+            <p class="service_tel">投诉/建议热线：<strong>400-883-9315</strong></p>
+            <div class="service_time">
+                <p class="time">周一至周六：<em>08:00-21:00</em></p>
+                <p class="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周日：<em>09:00-18:00</em></p>
+
+                <p class="icon"></p>
+            </div>
+        </div>
+        <div class="service_guide clearfix">
+            <dl class="shopguide">
+                <dt>购物指南</dt>
+                <dd>
+                    <a href="#">购物流程</a>
+                </dd>
+                <dd>
+                    <a href="#">会员说明</a>
+                </dd>
+                <dd>
+                    <a href="#">积分说明</a>
+                </dd>
+                <dd>
+                    <a href="#">优惠券</a>
+                </dd>
+                <dd>
+                    <a href="#">第三方服务说明</a>
+                </dd>
+                <dd>
+                    <a href="#">团购规则</a>
+                </dd>
+
+            </dl>
+            <dl class="pay">
+                <dt>支付方式</dt>
+                <dd>
+                    <a href="#">在线支付</a>
+                </dd>
+                <dd>
+                    <a href="#">体验点付款</a>
+                </dd>
+                <dd>
+                    <a href="#">货到付款</a>
+                </dd>
+                <dd>
+                    <a href="#">银行转账</a>
+                </dd>
+                <dd>
+                    <a href="#">邮局汇款</a>
+                </dd>
+                <dd>
+                    <a href="#">分期付款</a>
+                </dd>
+            </dl>
+            <dl class="delivery">
+                <dt> 配送方式</dt>
+                <dd>
+                    <a href="#">配送服务说明</a>
+                </dd>
+                <dd>
+                    <a href="#">验货签收与拒收</a>
+                </dd>
+                <dd>
+                    <a href="#">包装说明</a>
+                </dd>
+                <dd>
+                    <a href="#">24小时送达</a>
+                </dd>
+                <dd>
+                    <a href="#">免运费说明</a>
+                </dd>
+            </dl>
+            <dl class="customer">
+                <dt>售后服务</dt>
+                <dd>
+                    <a href="#">飞虎自营售后政策</a>
+                </dd>
+                <dd>
+                    <a href="#">第三方卖家售后政策</a>
+                </dd>
+                <dd>
+                    <a href="#">退换货流程</a>
+                </dd>
+                <dd>
+                    <a href="#">退款说明</a>
+                </dd>
+                <dd>
+                    <a href="#">发票说明</a>
+                </dd>
+                <dd>
+                    <a href="#">客服邮箱</a>
+                </dd>
+            </dl>
+            <dl class="valueAdd">
+                <dt>特色服务</dt>
+                <dd>
+                    <a href="#">产品知识</a>
+                </dd>
+                <dd>
+                    <a href="#">简易故障排除</a>
+                </dd>
+                <dd>
+                    <a href="#">软件下载</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="bottom">
+            <a href="#">常见问题</a>
+            |
+            <a href="#">法律说明</a>
+            |
+            <a href="#">联系客服</a>
+            |
+            <a href="#">新闻中心</a>
+            |
+            <a href="#">意见箱</a>
+            <br>
+
+            增值电信业务经营许可证：粤B2-20130551 |食品流通许可证：SP4403112014007826<br>
+
+            食品流通许可证：SP1103021110002595<br>
+
+            Copyright © 2009-2017 深圳市理约云信息管理有限公司.All Rights Reserved PASSPO
+        </div>
+    </div>
 </div>
 <ul class="fixed">
     <li id="totop">飞虎<br>首页</li>
     <li id="totoday"><img src="images/right_03.jpg" alt="">
-        <p>今日秒杀</p></li>
+        <p>今日秒杀</p>
+    </li>
     <li id="togoods"><img src="images/right_06.jpg" alt="">
-        <p>百货专区</p></li>
+        <p>百货专区</p>
+    </li>
 </ul>
 </body>
 </html>
 <script src="js/jquery-cookie-1.0.0.js"></script>
 <script>
     var user = $.getCookie("username");
-    $(function () {
-        if (user != "") {
+    $(function(){
+        if(user != ""){
             $(".header_t_left").html("亲爱的 <a href=''>" + user + "</a> 下午好！ <a href='javascript:void(0)' onclick='exit()' id='uexit'>退出</a>");
         }
     })
-    function exit() {
+
+    function exit(){
         $.removeCookie("username");
         window.location.href = "index.html";
     }
