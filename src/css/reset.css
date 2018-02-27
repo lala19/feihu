@@ -1,0 +1,11 @@
+html, body, h1, h2, h3, h4, h5, h6, p, span, a, ul, li, ol, i, em, dl, dd, dt, img, input, form, table, tr, td,header,main,footer,aside{
+margin:0; padding:0;
+}
+html, body{
+font:normal 12px/22px "微软雅黑"; color:#000300;
+}
+ul li{ list-style:none; }
+a{ text-decoration:none; }
+img{ border:none; }
+input, button{ outline:none; border:none; }
+.clearfix:after{ content:"."; clear:both; overflow:hidden; display:block; visibility:hidden; height:0; font-size:0; }

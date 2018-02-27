@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/reg.css">
+    <script src="js/lib/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.idcode.css">
+    <script src="js/lib/jquery.idcode.js"></script>
+    <script src="js/lib/Validform_v4.0.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js"></script>
+</head>
+<body>
+<div class="header_t">
+    <div class="main">
+        <div class="header_t_left">
+            <span>您好，欢迎来到飞虎乐购 <a href="login.html">安全登录</a></span> <span> 还没加入我们？<a href="register.html">免费注册</a></span>
+        </div>
+        <div class="header_t_right">
+            <ul>
+                <li>我的账户</li>
+                <li>网站导航</li>
+                <li>加入收藏</li>
+                <li>400 883 6900</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="con-wrap">
+    <div class="con">
+        <div class="login-logo">
+            <a href="#"><img src="images/login/login_logo.jpg" alt=""></a>
+        </div>
+        <form method="post" class="login-form" id="myform">
+            <div class="login-title">
+                <p>用户注册</p>
+            </div>
+            <div class="login-form-box">
+                <div class="msg-box"><p>您尚未注册：<span>请填写注册信息，带有*号的为必填项。</span></p></div>
+                <div class="login-form-con clearfix">
+                    <dl>
+                        <dt><span>*</span>用户名:</dt>
+                        <dd><input type="text" name="userName" id="userName" class="inputxt" datatype="s6-18" nullmsg="用户名不能为空" errormsg="用户名至少6个字符,最多18个字符"/></dd>
+                        <dd><p class="Validform_checktip usernamemsg"></p></dd>
+                    </dl>
+                    <dl>
+                        <dt><span>*</span>密码:</dt>
+                        <dd><input type="text" name="userPwd" id="userPwd"  datatype="*6-16" class="inputxt" nullmsg="密码不能为空" errormsg="密码范围在6~16位之间"/></dd>
+                        <dd><p class="Validform_checktip"></p></dd>
+                    </dl>
+                    <dl>
+                        <dt><span>*</span>确认密码:</dt>
+                        <dd><input type="text" name="userPwdrep" datatype="*" class="inputxt" recheck="userPwd" nullmsg="请再输入一次密码" errormsg="您两次输入的账号密码不一致"/></dd>
+                        <dd><p class="Validform_checktip"></p></dd>
+                    </dl>
+                    <dl>
+                        <dt><span>*</span>邮箱:</dt>
+                        <dd><input type="text" name="userEmail" id="userEmail" datatype="e" class="inputxt" nullmsg="邮箱不能为空" errormsg="邮箱格式不正确"/></dd>
+                        <dd><p class="Validform_checktip"></p></dd>
+                    </dl>
+                    <dl>
+                        <dt><span></span>推荐人:</dt>
+                        <dd><input type="text"/></dd>
+                        <dd></dd>
+                    </dl>
+                    <dl>
+                        <dt><span></span>活动代码:</dt>
+                        <dd><input type="text"/></dd>
+                        <dd></dd>
+                    </dl>
+                    <dl>
+                        <dt><span>*</span>验证码:</dt>
+                        <dd><input type="text" name="Code" id ="Txtidcode"/></dd>
+                        <dd><p id="codetxt"></p></dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd><span id="idcode"></span><a href="#">换张图</a></dd>
+                        <dd></dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd><input type="checkbox" name="cbx" checked="checked"/> 我已阅读并同意
+                            <a href="#">飞虎乐购用户协议</a></dd>
+                        <dd></dd>
+                    </dl>
+                </div>
+                <div class="link"></div>
+                <div class="bottom">
+                    <button id="btn-reg"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <a href="#">常见问题</a>|
+    <a href="#">法律说明</a>|
+    <a href="#">联系我们</a> <br>
+
+    增值电信业务经营许可证：粤B2-20130551 |食品流通许可证：SP4403112014007826<br>
+
+    食品流通许可证：SP1103021110002595<br>
+
+    Copyright © 2009-2017 深圳市理约云信息管理有限公司.All Rights Reserved  PASSPO
+</div>
+</body>
+</html>
+<script>
+    $("input").blur(function(){
+        $(this).removeClass("bd-blue");
+    });
+    $("input").focus(function(){
+        $(this).addClass("bd-blue");
+    });
+    $.idcode.setCode();   //加载生成验证码方法
+
+    $("#btn-reg").click(function(){
+        var IsBy = $.idcode.validateCode()  //调用返回值，返回值结果为true或者false
+        if(IsBy){
+            $("#codetxt").html("");
+        }else {
+            $("#codetxt").html("验证码有误");
+        }
+    })
+    $("#userName").change(function(){
+        $.ajax({
+            url: "http://127.0.0.1/FeiHu/server/username.php",
+            data: {
+                username: $("#userName").val(),
+            },
+            dataType: "json",
+            type: "post",
+        }).done(function (res) {
+            if(res){
+                $(".usernamemsg").html( '通过信息验证！');
+            }else {
+                $(".usernamemsg").html('用户名已存在!');
+            }
+        });
+    });
+
+    $(function(){
+
+        /*
+        $(".registerform").Validform();  //就这一行代码！;
+        */
+
+        $(".login-form").Validform({
+            tiptype:2 //提示类型, 默认是1:无右侧文字提示, 2表示有右侧文字提示
+        });
+
+    })
+</script>

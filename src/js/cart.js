@@ -1,0 +1,13 @@
+(function($){
+    $(function(){
+        $(".cart-like-item").on("mouseenter",function(){
+            $(this).addClass("cart-like-select").siblings("li").removeClass("cart-like-select");
+        })
+        $(".cart-like-item").on("mouseleave",function(){
+            $(this).removeClass("cart-like-select");
+        })
+        $("#close-pop").on("click",function(){
+            $(".cart-title-pop").hide();
+        })
+    })
+})(jQuery);

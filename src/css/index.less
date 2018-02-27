@@ -1,0 +1,346 @@
+@yellow:#ffc404;
+body{ background:#fafafa; }
+.header{ background:#fff }
+#logo{
+  display:block;
+  width:207px;
+  margin:14px 0 0 5px;
+  height:65px;
+  overflow:hidden;
+  background:url("../images/feihu_13.jpg");
+  background-size:cover;
+  float:left;
+}
+#searchForm{
+  height:28px;
+  border:1px solid @yellow;
+  float:left;
+  display:block;
+  margin:38px 0 32px 140px;
+  .stxt{
+    width:338px;
+    height:28px;
+    float:left;
+    font-size:16px;
+    padding-left:8px;
+  }
+  .sbtn{
+    width:80px;
+    height:28px;
+    float:left;
+    background:@yellow;
+    color:#363032;
+    font-size:14px;
+    cursor:pointer;
+    font-weight:bolder;
+  }
+}
+.nav{
+  height:40px;
+  background-color:#fec400;
+  font-size:16px;
+  .nav-list{
+    float:left;
+    li{
+      float:left;
+      a{
+        display:block;
+        color:#000300;
+        line-height:40px;
+        padding:0 11px 0 11px;
+        text-align:center;
+      }
+      a:hover{
+        background:#333;
+        color:#fff;
+      }
+    }
+    li:nth-child(1){
+      width:190px;
+      a:hover{
+        background-color:#fec400;
+        color:#000300;
+      }
+    }
+  }
+  .cart-con{
+    float:right;
+    width:191px;
+    height:22px;
+    float:right;
+    margin-top:7px;
+    a{ font-size:12px; display:block; float:left; text-align:center; height:24px; color:#000000 }
+    .cart{
+      width:110px;
+      color:#4f4b4c;
+      border-radius:5px 0 0 5px;
+      padding-left:10px;
+      background:url("../images/feihu_17.jpg") no-repeat 15px center #fff;
+      span{ color:#cf0038; font-weight:bolder; }
+    }
+    .cart-tar{ width:69px; background:#ffde00; border-radius:0 5px 5px 0; }
+    .cart-tar:hover{ color:#fff }
+  }
+}
+.banner{
+  background:url("../images/banner-bg2.png") left center no-repeat, url("../images/banner-bg.png") right center no-repeat #f2f2f2;
+  .nav-item{
+    background:#f6f6f6;
+    width:190px;
+    text-align:center;
+    float:left;
+    li:hover{ background:#fff }
+    li{
+      line-height:32px;
+      height:32px;
+      a{
+        color:#000205;
+        font-size:14px;
+        padding-left:14px;
+      }
+    }
+  }
+  //轮播图
+  .slide{
+    width:783px;
+    height:480px;
+    float:left;
+    cursor:pointer;
+    .swiper-slide{ width:783px; height:480px; }
+    .swiper-button-prev{ opacity:0; width:30px; height:60px; background-color:#000 }
+    .swiper-button-next{ opacity:0; width:30px; height:60px; background-color:#000 }
+  }
+}
+.notice-info{
+  width:227px;
+  height:180px;
+  float:left;
+  .notice-info-title{
+    width:227px; height:40px; line-height:40px;
+    background:url("../images/notice_03.jpg") no-repeat 77px center #ffffff;
+    text-align:center; font-size:16px; border-bottom:1px solid #e1dfe0;
+  }
+  ul{
+    padding:15px 0 15px 0;
+    background-color:#f8dae2;
+    li{ overflow:hidden; white-space:nowrap; }
+    li:nth-child(1), li:nth-child(2), li:nth-child(3){
+      a{ color:#ff0500 }
+    }
+    li a{
+      color:#262f2c;
+    }
+    a:hover{ color:#ff0500 }
+  }
+  .notice-info-bottom{
+    width:227px;
+    height:301px;
+    a{ display:block; background:url("../images/notice-info-bottom_07.jpg") no-repeat center;
+      width:227px; height:301px;
+    }
+  }
+}
+//秒杀
+.seckill{
+  .seckill-con{
+    padding:5px 0;
+    background:#fff;
+    margin-top:20px;
+    .seckill-count{
+      width:190px;
+      height:267px;
+      background-color:#f40000;
+      float:left;
+      text-align:center;
+      h4{ font-size:29px; color:#fff; font-weight:normal; line-height:60px; margin-top:30px }
+      h6{ margin:0 auto; height:23px; width:110px; text-align:center;
+        line-height:23px; color:#f40000; font-weight:normal;
+        padding-left:10px;
+        border-radius:11px;
+        background:url("../images/img_15.jpg") no-repeat 15px center #fff;
+      }
+      .seckill-count-txt{ line-height:35px; margin-top:20px; font-size:14px; display:block; text-align:center; }
+      .seckill-count-time{
+        width:180px;
+        margin:0 auto;
+        span{
+          width:38px; height:38px;
+          float:left;
+          background:#000;
+          display:block;
+          color:#fff;
+          font-size:20px;
+          line-height:38px;
+          text-align:center;
+          margin-left:17px;
+        }
+      }
+    }
+    //秒杀商品
+    .seckill-goods{
+      float:left;
+      li{
+        float:left;
+        margin-left:15px;
+        div{
+          width:185px;
+          overflow:hidden;
+          white-space:nowrap;
+          .seckill-goods-title{
+            margin-top:15px;
+            p{color:#000; font-size:14px; margin:0 14px;}
+            span{color:#737489}
+          }
+          a{
+            display:block;
+            text-align:center;
+            em,i{font-style:normal;}
+          }
+          .seckill-goods-img{
+            text-align:center;
+            height:165px;
+            img{
+              vertical-align:middle;
+            }
+            span{
+              vertical-align:middle;width:0; height:100%; display:inline-block;
+            }
+          }
+          .seckill-goods-buy{
+            width:185px;height:30px;background-color:#fe0000;
+            color:#fff; margin-top:10px;
+            span{font-size:16px; float:left; margin-left:10px; line-height:30px;}
+            i{text-decoration:line-through; float:left;line-height:30px;margin-left:10px;}
+            em{
+              width:66px; height:28px; display:block;
+              background-color:#fff; float:right; margin:1px 1px 1px 0;
+              color:#fe0000; line-height:28px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.mobile-phone{
+  margin-top:25px;
+  .mobile-phone-title{
+    background:url("../images/img_24.jpg") no-repeat left center;
+    border-bottom: 2px solid #666;
+    h2{
+      width:170px; float:left;padding-left:30px;
+      line-height:43px;
+      font-weight:normal;
+    }
+    ul{
+      float:right;
+      li{
+        line-height:43px;
+        font-size:12px;
+        float:left;
+        margin:0 10px;
+        a{color:#000;}
+      }
+    }
+  }
+  .mobile-phone-con{
+    background:#fff;
+    img:hover{transform: scale(1.05);}
+    .mobile-phone-con-l{ width:201px;overflow:hidden;}
+    .mobile-phone-con-r{
+      width:401px;
+      a{display:block; overflow:hidden}
+    }
+    .mobile-phone-con-l,.mobile-phone-con-r{
+      float:left;
+    }
+    .mobile-phone-con-item{
+      float:left;
+      li{
+        border-right:1px solid #fafafa;
+        border-bottom:1px solid #fafafa;
+        text-align:center;
+        float:left;
+        height:211px;
+        width:198px;
+        a{color:#000;}
+        div{
+          width:160px;
+          margin:0 auto;
+          overflow:hidden;
+          white-space:nowrap;
+          span{color:#e30303; font-weight:700;}
+          .con-item-img{
+            height:165px;
+            text-align:center;
+            display:block;
+            img{
+              vertical-align:middle;
+            }
+            i{
+              vertical-align:middle; width:0; height:100%; display:inline-block;
+            }
+          }
+        }
+      }
+      li:last-child{border-right:0}
+    }
+  }
+  .brand{
+    ul{
+      text-align:center;
+      background:#fff;
+      li{
+        float:left;
+        width:146px;
+        height:68px;
+        a{
+          width:150px;
+          height:68px;
+          display:block;
+          vertical-align:middle;
+          img{
+            vertical-align:middle;
+          }
+          i{
+            vertical-align:middle; width:0; height:100%; display:inline-block;
+          }
+        }
+      }
+      li:hover{ opacity:0.5;}
+    }
+  }
+}
+.footer{
+  background: #fff;
+  height:345px;
+  margin-top:30px;
+  .footer-con{
+    height:345px;
+    background:url("../images/bottom_08.jpg") no-repeat center #fff;
+  }
+}
+.fixed{
+  display:none;
+  position:absolute;
+  right:80px;
+  top:100px;
+  text-align:center;
+  color:#333;
+  img{ margin-top:5px}
+  li:nth-child(1){
+    padding-top:8px;
+    height:52px;
+  }
+  li:nth-child(odd){
+    background:#ffdf00;
+  }
+  li:nth-child(even){
+    background:#fff;
+  }
+  li{
+    width:60px;
+    height:60px;
+    cursor:pointer;
+  }
+}

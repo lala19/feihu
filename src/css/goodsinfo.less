@@ -1,0 +1,262 @@
+@yellow:#ae0001;
+body{ background:#fafafa; }
+.header{ background:#fff }
+#logo{
+  display:block;
+  width:207px;
+  margin:14px 0 0 5px;
+  height:65px;
+  overflow:hidden;
+  background:url("../images/feihu_13.jpg");
+  background-size:cover;
+  float:left;
+}
+.search{
+  border:5px solid #e9e9e9;
+  float:left;
+  margin:38px 0 32px 140px;
+}
+#searchForm{
+  height:28px;
+  border:1px solid @yellow;
+  float:left;
+  display:block;
+  .stxt{
+    width:438px;
+    height:28px;
+    float:left;
+    font-size:16px;
+    padding-left:8px;
+  }
+  .sbtn{
+    width:80px;
+    height:28px;
+    float:left;
+    background:@yellow;
+    color:#fff;
+    font-size:14px;
+    cursor:pointer;
+    font-weight:bolder;
+  }
+}
+
+.nav{
+  height:40px;
+  position:relative;
+  .main{
+    height:40px;
+    line-height:40px;
+  }
+  .nav-allgoods{
+    width:230px;
+    position:absolute;
+    background:url("../images/goodsinfo/sl_header32.png") no-repeat 0 0;
+    a{
+      display: block;
+      position: relative;
+      width: 205px;
+      height: 40px;
+      overflow: hidden;
+      padding-left: 25px;
+      line-height: 40px;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 1px;
+      b{
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        width: 16px;
+        height: 16px;
+        overflow: hidden;
+        background: url(../images/goodsinfo/sl_header_v2.png) no-repeat -20px 0;
+      }
+    }
+  }
+  .miannav{
+    background:url("../images/goodsinfo/sl_header32.png") no-repeat right -40px #C7012C;
+    margin-left:230px;
+    height:40px;
+    ul{
+      float:left;
+      li:nth-child(1) a{
+        background:none;
+      }
+      li:hover a{
+        color: #FDCA30
+      }
+      li{
+        float:left;
+        a{
+          display: block;
+          padding: 0 20px;
+          letter-spacing: 2px;
+          float: left;
+          position: relative;
+          z-index: 1;
+          font-size: 16px;
+          font-family: "Microsoft YaHei";
+          line-height: 40px;
+          color: #fff;
+          margin-right: 0px;
+          background: url(../images/goodsinfo/sl_header_icon.png) no-repeat 0 13px;
+        }
+      }
+    }
+    .cart-con{
+      float:right;
+      width: 217px;
+      height: 27px;
+      line-height: 27px;
+      margin-top: 6px;
+      margin-right:10px;
+      background: url(../images/goodsinfo/sl_header.jpg) 0 -40px;
+      .cart{
+        padding-left:44px;
+        display:block;
+        float:left;
+        color:#333333;
+        span{
+          color:#c8012c;
+        }
+      }
+      .cart-tar{
+        float:right;
+        display:block;
+        width:72px;
+        text-align:center;
+        color:#fff;
+      }
+    }
+  }
+}
+.con-wrapper{
+  .con-wrapper-title{
+    height: 30px;
+    overflow: hidden;
+    border-bottom: solid 1px #ddd;
+    margin-bottom: 10px;
+    margin-top:10px;
+    line-height: 30px;
+    padding-left: 10px;
+    a{
+      float:left;
+      color:#666;
+    }
+    span{
+      display:block;
+      float:left;
+      color:#999;
+      margin-left:10px;
+      padding-left:10px;
+      background:url("../images/goodsinfo/ui_icon.png") no-repeat 0 -250px;
+    }
+  }
+  .goodview{
+    float:left;
+  }
+  .imgview{
+    position: relative;
+    width: 280px;
+    height: 280px;
+    padding: 10px;
+    border: solid 1px #ccc;
+    .imgview-con{
+      width: 280px;
+      height: 280px;
+      img{
+        width: 280px;
+        height: 280px;
+      }
+    }
+  }
+  .imgview-list{
+    //放大镜图片列表
+    margin:10px 0;
+    .img-list{
+      float: left;
+      width: 276px;
+      padding: 0 0 0 4px;
+      height: 64px;
+      overflow: hidden;
+      position: relative;
+      ul{
+        li{
+          float:left;
+          border: solid 1px #EAEAEA;
+          width:60px;
+          height:60px;
+          padding:1px;
+          overflow:hidden;
+          margin-right:5px;
+        }
+        .curr{
+          border: solid 2px #B40005;
+          padding:0;
+        }
+      }
+    }
+    .imgview-list-left{
+      float: left;
+      width: 10px;
+      height: 14px;
+      padding: 25px 0;
+      overflow: hidden;
+      cursor: pointer;
+      span{
+        display: block;
+        width: 10px;
+        height: 14px;
+        overflow: hidden;
+        background: url(../images/goodsinfo/vi_bg.png) no-repeat -80px 0;
+      }
+      span:hover{
+        background-position: -80px -22px;
+      }
+    }
+    .imgview-list-right{
+      float:right;
+      width: 10px;
+      height: 14px;
+      padding: 25px 0;
+      overflow: hidden;
+      cursor: pointer;
+      span{
+        display: block;
+        width: 10px;
+        height: 14px;
+        overflow: hidden;
+        background: url(../images/goodsinfo/vi_bg.png) no-repeat -99px 0;
+      }
+      span:hover{
+        background-position: -99px -22px;
+      }
+    }
+  }
+}
+.preview-more{
+  .enjoy{
+    float:right;
+    a{
+      width: 16px;
+      height: 16px;
+      display:block;
+      margin-right: 10px;
+      float:right;
+    }
+    a:nth-child(1){
+      background:url("../images/goodsinfo/ui_enjoy.jpg") no-repeat 0 0;
+    }
+  }
+}
+.goodinfo{
+  margin-left:312px;
+  .goodinfo-title{
+    height:65px;
+    border-bottom: 1px dotted #cbcbcb;
+    p{line-height:30px; font-size:14px; padding-left:10px;}
+    span{line-height:30px; color:#999;padding-left:10px;}
+  }
+}
+
+
