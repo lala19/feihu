@@ -17,10 +17,74 @@
 }
 .header_t_right li {
   float: left;
-  margin-left: 12px;
-  margin-right: 12px;
+}
+.header_t_right li b {
+  background: url("../images/goodsinfo/sl_sitenav.png?v=0516") no-repeat 0 0px;
+  position: absolute;
+  right: 6px;
+  top: 10px;
+  display: block;
+  width: 10px;
+  height: 5px;
+  overflow: hidden;
 }
 .header_t_right li:last-child {
   background: url("../images/feihu_07.jpg") left center no-repeat;
   padding-left: 20px;
+}
+.header_t_right a {
+  color: #666;
+}
+.header_t_right .account:hover b {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease-in;
+}
+.header_t_right .navigation:hover b {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease-in;
+}
+.header_t_right .account {
+  position: relative;
+  width: 70px;
+  padding: 0 0 0 10px;
+}
+.header_t_right .account li:last-child {
+  background: none;
+  padding-left: 0;
+}
+.header_t_right .account .account-hide {
+  position: absolute;
+  top: 28px;
+  float: none;
+  display: none;
+  background: #fff;
+  border-top: 0;
+  z-index: 9999;
+}
+.header_t_right .navigation {
+  position: relative;
+  width: 70px;
+  padding: 0 0 0 10px;
+}
+.header_t_right .navigation li:last-child {
+  background: none;
+  padding-left: 0;
+}
+.header_t_right .navigation .navigation-hide {
+  position: absolute;
+  top: 28px;
+  float: none;
+  display: none;
+  background: #fff;
+  width: 70px;
+  z-index: 9999;
+}
+.header_t_right .account-curr {
+  background: #fff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.header_t_right .collect {
+  width: 70px;
+  padding: 0 0 0 10px;
 }

@@ -16,11 +16,77 @@
   float:right;
   li{
     float:left;
-    margin-left:12px;
-    margin-right:12px;
+    b{
+      background:url("../images/goodsinfo/sl_sitenav.png?v=0516") no-repeat 0 0px;
+      position: absolute;
+      right: 6px;
+      top: 10px;
+      display: block;
+      width: 10px;
+      height: 5px;
+      overflow: hidden;
+    }
   }
   li:last-child{
     background:url("../images/feihu_07.jpg") left center no-repeat;
     padding-left:20px;
+  }
+  a{ color:#666}
+  .account:hover{
+    b{
+      transform:rotate(180deg);
+      transition: transform .2s ease-in
+    }
+  }
+  .navigation:hover{
+    b{
+      transform:rotate(180deg);
+      transition: transform .2s ease-in
+    }
+  }
+  .account{
+    position:relative;
+    width: 70px;
+    padding: 0 0 0 10px;
+    li:last-child{
+      background:none;
+      padding-left:0;
+    }
+    .account-hide{
+      position:absolute;
+      top:28px;
+      float:none;
+      display:none;
+      background:#fff;
+      border-top:0;
+      z-index:9999;
+    }
+  }
+  .navigation{
+    position:relative;
+    width: 70px;
+    padding: 0 0 0 10px;
+    li:last-child{
+      background:none;
+      padding-left:0;
+    }
+    .navigation-hide{
+      position:absolute;
+      top:28px;
+      float:none;
+      display:none;
+      background:#fff;
+      width:70px;
+      z-index:9999;
+    }
+  }
+  .account-curr{
+    background:#fff;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+  }
+  .collect{
+    width: 70px;
+    padding: 0 0 0 10px;
   }
 }

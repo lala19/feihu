@@ -25,6 +25,7 @@
     }, 1000);
     $(document).on("scroll",function(){
         $(".fixed").css("top",$(document).scrollTop()+100);
+        $(".fixed").css("left",$(".main").offset().left+$(".main").width());
         if($(document).scrollTop()>=400){
             $(".fixed").show();
         }
@@ -32,6 +33,5 @@
             $(".fixed").hide();
         }
     });
-
 
 })(jQuery);
