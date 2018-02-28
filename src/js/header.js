@@ -1,0 +1,16 @@
+((function($){
+    $(".account").hover(function(){
+        $(this).addClass("account-curr");
+        $(this).children("ul").show();
+    },function(){
+        $(this).removeClass("account-curr");
+        $(this).children("ul").hide();
+    });
+    $(".navigation").hover(function(){
+        $(this).addClass("account-curr");
+        $(this).children("ul").show();
+    },function(){
+        $(this).removeClass("account-curr");
+        $(this).children("ul").hide();
+    });
+}))(jQuery);
