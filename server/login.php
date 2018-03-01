@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         $resultArr["status"] = 1;
         $resultArr["msg"] = "登录成功";
+        session_id($username);
         session_start();
         $_SESSION["userInfo"]=$username;
     } else {

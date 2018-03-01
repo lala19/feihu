@@ -84,7 +84,7 @@
                 </div>
                 <div class="link"></div>
                 <div class="bottom">
-                    <button type="button"></button>
+                    <button type="submit"></button>
                     <a href="register.html">免费注册</a>
                 </div>
             </div>
@@ -123,9 +123,8 @@
                 dataType: "json",
                 type: "post"
             }).done(function (res) {
-                console.log(res);
                 if (res.status == 1) {
-                    $.setCookie('username',$("#userName").val(),1);
+                    alert("登录成功!");
                     window.location.href = "index.html";
                     return false;
                 }else {

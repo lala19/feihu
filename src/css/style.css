@@ -14,6 +14,18 @@
 }
 .header_t_right {
   float: right;
+  /*.account:hover{
+    b{
+      transform:rotate(180deg);
+      transition: transform .2s ease-in
+    }
+  }
+  .navigation:hover{
+    b{
+      transform:rotate(180deg);
+      transition: transform .2s ease-in
+    }
+  }*/
 }
 .header_t_right li {
   float: left;
@@ -21,7 +33,7 @@
 .header_t_right li b {
   background: url("../images/goodsinfo/sl_sitenav.png?v=0516") no-repeat 0 0px;
   position: absolute;
-  right: 6px;
+  right: 5px;
   top: 10px;
   display: block;
   width: 10px;
@@ -35,49 +47,57 @@
 .header_t_right a {
   color: #666;
 }
-.header_t_right .account:hover b {
-  transform: rotate(180deg);
-  transition: transform 0.2s ease-in;
-}
-.header_t_right .navigation:hover b {
-  transform: rotate(180deg);
-  transition: transform 0.2s ease-in;
-}
 .header_t_right .account {
   position: relative;
-  width: 70px;
-  padding: 0 0 0 10px;
+  width: 80px;
+  text-align: center;
+  padding: 0 0 0 0px;
 }
 .header_t_right .account li:last-child {
   background: none;
   padding-left: 0;
 }
 .header_t_right .account .account-hide {
-  position: absolute;
-  top: 28px;
   float: none;
+  width: 80px;
+  position: absolute;
+  top: 27px;
+  left: -1px;
+  overflow: hidden;
   display: none;
   background: #fff;
+  border: solid #ccc 1px;
   border-top: 0;
   z-index: 9999;
 }
+.header_t_right .account .account-hide li {
+  float: none;
+}
 .header_t_right .navigation {
   position: relative;
-  width: 70px;
-  padding: 0 0 0 10px;
+  width: 80px;
+  padding: 0;
+  text-align: center;
+  margin-left: 5px;
 }
 .header_t_right .navigation li:last-child {
   background: none;
   padding-left: 0;
 }
 .header_t_right .navigation .navigation-hide {
-  position: absolute;
-  top: 28px;
   float: none;
+  position: absolute;
+  top: 27px;
+  left: -1px;
   display: none;
   background: #fff;
-  width: 70px;
+  width: 80px;
   z-index: 9999;
+  border: solid #ccc 1px;
+  border-top: 0;
+}
+.header_t_right .navigation .navigation-hide li {
+  float: none;
 }
 .header_t_right .account-curr {
   background: #fff;

@@ -363,6 +363,10 @@ body {
 .mobile-phone .mobile-phone-con .mobile-phone-con-item {
   float: left;
 }
+.mobile-phone .mobile-phone-con .mobile-phone-con-item ul {
+  width: 598px;
+  overflow: hidden;
+}
 .mobile-phone .mobile-phone-con .mobile-phone-con-item li {
   border-right: 1px solid #fafafa;
   border-bottom: 1px solid #fafafa;
@@ -400,6 +404,9 @@ body {
 }
 .mobile-phone .mobile-phone-con .mobile-phone-con-item li:last-child {
   border-right: 0;
+}
+.mobile-phone .brand {
+  height: 68px;
 }
 .mobile-phone .brand ul {
   text-align: center;

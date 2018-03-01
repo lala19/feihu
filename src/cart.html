@@ -83,6 +83,85 @@
         <div class="cart-list">
             <div class="cart-item">
                 <div class="cart-box">
+                    <table class="cart-table" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <th>
+                                <label for="">
+                                    <input type="checkbox" class="allselect" checked="checked"/> 全选
+                                </label>
+                            </th>
+                            <th class="col_img">
+                                <span>飞虎自营商品</span>
+                            </th>
+                            <th class="col_name">商品名称</th>
+                            <th class="col_num">商品数量</th>
+                            <th class="col_price">商品单价</th>
+                            <th class="col_total">飞虎总价</th>
+                            <th class="col_op">操作</th>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td>
+                                    <label for="">
+                                        <input type="checkbox" checked="checked" class="itemselect"/>
+                                    </label>
+                                </td>
+                                <td class="col_img">
+                                    <a href="javascript:void 0">
+                                        <img src="http://image.efeihu.com/images/sdimage/58856014-85a8-49d4-8b68-48c618c7d3b5.jpg" width="70" alt="">
+                                    </a>
+                                </td>
+                                <td class="col_name">
+                                    <a href="javascript:void 0">华为 HUAWEI P10 全网通手机 4GB+64GB</a>
+                                </td>
+                                <td class="col_num">
+                                    <div>
+                                        <input type="text" value="1" class="goods-num"/>
+                                        <span class="jia">+</span>
+                                        <span class="jian">-</span>
+                                    </div>
+                                </td>
+                                <td class="col_price"><span>¥ <em>3488</em></span></td>
+                                <td class="col_total"><span>¥ <em>3488</em></span></td>
+                                <td class="col_op">
+                                    <a href="javascript:void(0)" class="tr-delete">删除</a> |
+                                    <a href="javascript:void 0">收藏</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">
+                                        <input type="checkbox" class="itemselect" checked="checked"/>
+                                    </label>
+                                </td>
+                                <td class="col_img">
+                                    <a href="javascript:void 0">
+                                        <img src="http://image.efeihu.com/images/sdimage/58856014-85a8-49d4-8b68-48c618c7d3b5.jpg" width="70" alt="">
+                                    </a>
+                                </td>
+                                <td class="col_name">
+                                    <a href="javascript:void 0">华为 HUAWEI P10 全网通手机 4GB+64GB</a>
+                                </td>
+                                <td class="col_num">
+                                    <div>
+                                        <input type="text" value="1" class="goods-num"/>
+                                        <span class="jia">+</span>
+                                        <span class="jian">-</span>
+                                    </div>
+                                </td>
+                                <td class="col_price"><span>¥ <em>3488</em></span></td>
+                                <td class="col_total"><span>¥ <em>3488</em></span></td>
+                                <td class="col_op">
+                                    <a href="javascript:void(0)" class="tr-delete">删除</a> |
+                                    <a href="javascript:void 0">收藏</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="count">
+                        <span class="cunt-msg">不同商家商品无法合并订单购买，请分别结算。</span>
+                        <p class="count-res">总金额: <span>¥ <em>3488</em></span></p>
+                    </div>
                     <div class="cart-empty">
                         <div class="hint-title">您的购物车里还没有添加任何商品</div>
                         <dl class="hint">
@@ -91,6 +170,11 @@
                             <dd>2.<a href="#">登录</a>到您的专属购物车，继续购买上次加入的商品。</dd>
                         </dl>
                     </div>
+                </div>
+                <div class="mycart-go clearfix">
+                    <a href="javascript:void 0" class="clearcart">清空购物车</a>
+                    <a href="javscript:void 0" class="jisuan">去结算</a>
+                    <a href="javascript:void 0" class="continue-cart">继续购物</a>
                 </div>
             </div>
         </div>
@@ -284,3 +368,27 @@
 
 </body>
 </html>
+<script src="js/lib/jquery-tools.js"></script>
+<script>
+
+    $(function(){
+        //我的账户 下拉菜单
+        $(".account,.navigation").on("mouseenter",function(){
+            $.rotate180($(this).children("b"));
+            $(this).css({
+                "background":"#fff",
+                "border-left":"solid 1px #ccc",
+                "border-right":"solid 1px #ccc",
+            });
+            $(this).children("ul").css("display","block");
+        });
+        $(".account,.navigation").on("mouseleave",function(){
+            $.cancelrotate180($(this).children("b"));
+            $(this).css({
+                "background":"none",
+                "border":"none"
+            });
+            $(this).children("ul").css("display","none");
+        });
+    })
+</script>
