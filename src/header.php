@@ -8,6 +8,9 @@
     <script src="js/lib/jquery-3.3.1.js"></script>
     <script src="js/lib/jquery-tools.js"></script>
     <script src="js/jquery-cookie-1.0.0.js"></script>
+    <!--[if lte IE 9]>
+        <script src="js/lib/html5shiv/html5shiv.js"></script>
+        <![endif]-->
 </head>
 <body>
 <!--header>top start-->

@@ -13,7 +13,7 @@
                     userName : {
                         required : true,
                         rangelength : [5, 18],
-                        remote : "http://127.0.0.1/FeiHu/server/username.php"
+                        remote : "./../server/username.php"
                     },
                     userPwd : {
                         rangelength : [5, 18]
@@ -49,7 +49,7 @@
                     if(IsBy){
                         $("#codetxt").html("");
                         $.ajax({
-                            url : "http://127.0.0.1/FeiHu/server/register.php",
+                            url : "./../server/register.php",
                             type : "post",
                             data : {
                                 username : $("#userName").val(),

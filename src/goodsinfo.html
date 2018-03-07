@@ -10,6 +10,9 @@
     <script src="js/jquery-cookie-1.0.0.js"></script>
     <script src="js/goodsinfo.js"></script>
     <script src="js/header.js"></script>
+    <!--[if lte IE 9]>
+    <script src="js/lib/html5shiv/html5shiv.js"></script>
+    <![endif]-->
 </head>
 <body>
 <header class="header">
@@ -766,27 +769,27 @@
                     <span>库 存：送至</span>
                     <div class="address">
                         <div class="address-top">
-                            <p>广东</p>
+                            <p class="addressmain">广东</p>
                             <span></span>
                         </div>
                         <div class="address-hide">
                             <dl>
                                 <dt>请选择您的收货省份</dt>
-                                <dd>
-                                    <a href="#">广东</a>
-                                    <a href="#">广西</a>
-                                    <a href="#">福建</a>
-                                    <a href="#">湖南</a>
-                                    <a href="#">湖北</a>
-                                    <a href="#">江西</a>
-                                    <a href="#">海南</a>
+                                <dd class="addressitem">
+                                    <a href="javascript:void(0)">广东</a>
+                                    <a href="javascript:void(0)">广西</a>
+                                    <a href="javascript:void(0)">福建</a>
+                                    <a href="javascript:void(0)">湖南</a>
+                                    <a href="javascript:void(0)">湖北</a>
+                                    <a href="javascript:void(0)">江西</a>
+                                    <a href="javascript:void(0)">海南</a>
                                 </dd>
-                                <dd>
-                                    <a href="#">上海</a>
-                                    <a href="#">江苏</a>
-                                    <a href="#">浙江</a>
-                                    <a href="#">安徽</a>
-                                    <a href="#">北京</a>
+                                <dd class="addressitem">
+                                    <a href="javascript:void(0)">上海</a>
+                                    <a href="javascript:void(0)">江苏</a>
+                                    <a href="javascript:void(0)">浙江</a>
+                                    <a href="javascript:void(0)">安徽</a>
+                                    <a href="javascript:void(0)">北京</a>
                                 </dd>
                                 <dd class="address-close"></dd>
                             </dl>
@@ -818,7 +821,7 @@
                         <span onselectstart="return false">-</span><input type="text" value="1" id="good-num"/><span onselectstart="return false">+</span>
                     </div>
                 </div>
-                <div class="sel-good">已选择 <b><span>银色</span> <span>苹果</span></b></div>
+                <div class="sel-good">已选择 <b><span class="msgcolor">银色</span> <span class="msgtype">苹果</span></b></div>
                 <div class="buy-btn">
                     <a href="javascript:void(0)" class="now-buy">立即购买</a>
                     <a href="javascript:void(0)" class="add-cart">加入购物车</a>
@@ -1095,15 +1098,7 @@
                             <a href="javascript:void 0" class="clear">清空</a>
                         </h3>
                         <ul class="recently-item">
-                            <li>
-                                <div class="rank-pro-name">Viken 维肯 Type-c条纹双色面条数据线</div>
-                                <p class="rank-por-price"><b>¥</b><em>25</em></p>
-                                <div class="rank-img">
-                                    <a href="#">
-                                        <img width="75px" height="75px" src="http://image.efeihu.com/images/im75/81e47c86-4e10-4764-86ba-85b92a7d866b.jpg" alt="">
-                                    </a>
-                                </div>
-                            </li>
+                           <!--最近浏览的商品-->
                         </ul>
                     </div>
                 </div>

@@ -79,45 +79,46 @@
     //购物车pop窗口功能
     (function(){
         var user=$.getCookie("userinfo");
-        $.ajax({
-            url:"http://127.0.0.1/FeiHu/server/getcart.php",
-            type:"post",
-            data:{
-                "username":user,
-            },
-            dataType:"json",
-        }).then(function (res) {
-            if(res){
-                var arr=[];
-                for(var i=0; i<res.length; i++){
-                    var flag=false;
-                    var num=0;
-                    for(var j=0; j<arr.length; j++) {
-                        if (arr[j].goods_id == res[i].goods_id) {
-                            flag = true;
-                            num = res[i].cart_num;
-                            break;
+        $(function(){
+            if(user!=""){
+                $.ajax({
+                    url:"./../server/getcart.php",
+                    type:"post",
+                    data:{
+                        "username":user,
+                    },
+                    dataType:"json",
+                }).then(function (res) {
+                    if(res){
+                        var arr=[];
+                        for(var i=0; i<res.length; i++){
+                            var flag=false;
+                            var num=0;
+                            for(var j=0; j<arr.length; j++) {
+                                if (arr[j].goods_id == res[i].goods_id) {
+                                    flag = true;
+                                    num = res[i].cart_num;
+                                    break;
+                                }
+                            }
+                            if(flag){
+                                arr[j].cart_num=parseInt(num)+parseInt(arr[j].cart_num);
+                            }else {
+                                arr.push(res[i])
+                            }
                         }
-                    }
-                    if(flag){
-                        arr[j].cart_num=parseInt(num)+parseInt(arr[j].cart_num);
-                    }else {
-                        arr.push(res[i])
-                    }
-                }
-                var money=0;
-                for(var i=0; i<arr.length; i++){
-                    arr[i].goods
-                    var str=`
+                        var money=0;
+                        for(var i=0; i<arr.length; i++){
+                            var str=`
                      <li class="mycart_pro mycart_pro_hover">
                         <p class="ui_pimg">
-                            <a href="./goodsinfo.html?actionid=${arr[i].goods_id}" class="img">
+                            <a href="./..goodsinfo.html?actionid=${arr[i].goods_id}" class="img">
                                 <img src="${arr[i].goods_pic}" width="45" height="45">
                             </a>
                         </p>
                         <ul class="ui_pattribute">
                        <li class="ui_pname">
-                                <a href="./goodsinfo.html?actionid=${arr[i].goods_id}">${arr[i].goods_name}</a>
+                                <a href="./..goodsinfo.html?actionid=${arr[i].goods_id}">${arr[i].goods_name}</a>
                             </li>
                             <li class="ui_pprice_e"><b>¥</b><em class="jiage">${arr[i].goods_price}</em>×<span class="shul">${arr[i].cart_num}</span></li>
                             <li class="delete">
@@ -125,53 +126,138 @@
                             </li>
                             </ul>
                             </li>`;
-                    $("#JcartList").html($("#JcartList").html()+str);
-                    money+=arr[i].goods_price*arr[i].cart_num
-                }
-                var Jcart_nums=res.length;//数量
-                var Jcart_amount=money;//总价
-                $(".popcart").children("span").html(res.length);
-
-                $("#Jcart_nums").html(Jcart_nums);
-                $("#Jcart_amount").html(Jcart_amount);
-                //绑定删除
-                $(".deleteitem").on("click",function(){
-                    var self=$(this);
-                    var datainfo=$(this).attr("data-info");
-                    var money=0;//及时价格
-                    var number=0;//及时数量
-                    var jiage=$(this).parent(".delete").parent(".ui_pattribute").parent(".mycart_pro ").siblings();
-                    for(var i=0; i<$(jiage).length; i++){
-                        money+=parseInt($($(jiage)[i]).find(".jiage").html())*parseInt($($(jiage)[i]).find(".jiage").siblings("span").html());
-                        number+=parseInt($($(jiage)[i]).find(".shul").html());
-                    }
-                    $.ajax({
-                        url:"http://127.0.0.1/FeiHu/server/deletecart.php",
-                        type:"post",
-                        data:{
-                            "username":user,
-                            "goodsid":datainfo
-                        },
-                        dataType:"json"
-                    }).then(function(res){
-                        if(res.status==1){
-                            $(self).parent(".delete").parent(".ui_pattribute").parent(".mycart_pro ").remove();
-                            $(".popcart").children("span").html($(".mycartList").children().length);
-                            if($(".mycartList").children().length==0){
-                                var stri=`<div style="margin:0 auto; color:red; font-size:12px;text-align:center; width: 140px; height:50px; line-height:50px">购物车是空的,快去买买买!</div>`
-                                $(".cartinfobox").html(stri);
-                            }
-                            $("#Jcart_nums").html(number);
-                            $("#Jcart_amount").html(money);
-                            $(".popcart").children("span").html(number);
+                            $("#JcartList").html($("#JcartList").html()+str);
+                            money+=arr[i].goods_price*arr[i].cart_num
                         }
-                    })
-                })
+                        var Jcart_nums=res.length;//数量
+                        var Jcart_amount=money;//总价
+                        $(".popcart").children("span").html(res.length);
+
+                        $("#Jcart_nums").html(Jcart_nums);
+                        $("#Jcart_amount").html(Jcart_amount);
+                        //绑定删除
+                        $(".deleteitem").on("click",function(){
+                            var self=$(this);
+                            var datainfo=$(this).attr("data-info");
+                            var money=0;//及时价格
+                            var number=0;//及时数量
+                            var jiage=$(this).parent(".delete").parent(".ui_pattribute").parent(".mycart_pro ").siblings();
+                            for(var i=0; i<$(jiage).length; i++){
+                                money+=parseInt($($(jiage)[i]).find(".jiage").html())*parseInt($($(jiage)[i]).find(".jiage").siblings("span").html());
+                                number+=parseInt($($(jiage)[i]).find(".shul").html());
+                            }
+                            $.ajax({
+                                url:"./../server/deletecart.php",
+                                type:"post",
+                                data:{
+                                    "username":user,
+                                    "goodsid":datainfo
+                                },
+                                dataType:"json"
+                            }).then(function(res){
+                                if(res.status==1){
+                                    $(self).parent(".delete").parent(".ui_pattribute").parent(".mycart_pro ").remove();
+                                    $(".popcart").children("span").html($(".mycartList").children().length);
+                                    if($(".mycartList").children().length==0){
+                                        var stri=`<div style="margin:0 auto; color:red; font-size:12px;text-align:center; width: 140px; height:50px; line-height:50px">购物车是空的,快去买买买!</div>`
+                                        $(".cartinfobox").html(stri);
+                                    }
+                                    $("#Jcart_nums").html(number);
+                                    $("#Jcart_amount").html(money);
+                                    $(".popcart").children("span").html(number);
+                                }
+                            })
+                        })
+                    }else {
+                        var stri=`<div style="margin:0 auto; color:red; font-size:12px;text-align:center; width: 140px; height:50px; line-height:50px">购物车是空的,快去买买买!</div>`
+                        $(".cartinfobox").html(stri);
+                    }
+                });
             }else {
-                var stri=`<div style="margin:0 auto; color:red; font-size:12px;text-align:center; width: 140px; height:50px; line-height:50px">购物车是空的,快去买买买!</div>`
-                $(".cartinfobox").html(stri);
+                //cookie 获取
+                var strCookie = $.getCookie("usercart");
+                var res = JSON.parse(strCookie || "[]");
+                if(res){
+                    var arr=[];
+                    for(var i=0; i<res.length; i++){
+                        var flag=false;
+                        var num=0;
+                        for(var j=0; j<arr.length; j++) {
+                            if (arr[j].goods_id == res[i].goods_id) {
+                                flag = true;
+                                num = res[i].cart_num;
+                                break;
+                            }
+                        }
+                        if(flag){
+                            arr[j].cart_num=parseInt(num)+parseInt(arr[j].cart_num);
+                        }else {
+                            arr.push(res[i])
+                        }
+                    }
+                    var money=0;
+                    for(var i=0; i<arr.length; i++){
+                        var str=`
+                     <li class="mycart_pro mycart_pro_hover">
+                        <p class="ui_pimg">
+                            <a href="./..goodsinfo.html?actionid=${arr[i].goods_id}" class="img">
+                                <img src="${arr[i].goods_pic}" width="45" height="45">
+                            </a>
+                        </p>
+                        <ul class="ui_pattribute">
+                       <li class="ui_pname">
+                                <a href="./..goodsinfo.html?actionid=${arr[i].goods_id}">${arr[i].goods_name}</a>
+                            </li>
+                            <li class="ui_pprice_e"><b>¥</b><em class="jiage">${arr[i].goods_price}</em>×<span class="shul">${arr[i].cart_num}</span></li>
+                            <li class="delete">
+                                <a href="javascript:void(0)" data-info="${arr[i].goods_id}" class="deleteitem">删除</a>
+                            </li>
+                            </ul>
+                            </li>`;
+                        $("#JcartList").html($("#JcartList").html()+str);
+                        console.log($("#JcartList"));
+                        money+=arr[i].goods_price*arr[i].cart_num;
+                    }
+                    var Jcart_nums=res.length;//数量
+                    var Jcart_amount=money;//总价
+                    $(".popcart").children("span").html(res.length);
+
+                    $("#Jcart_nums").html(Jcart_nums);
+                    $("#Jcart_amount").html(Jcart_amount);
+                    //绑定删除
+                    $(".deleteitem").on("click",function(){
+                        var money=0;//及时价格
+                        var number=0;//及时数量
+                        var self=$(this);
+                        var jiage=$(this).parent(".delete").parent(".ui_pattribute").parent(".mycart_pro ").siblings();
+                        for(var i=0; i<$(jiage).length; i++){
+                            money+=parseInt($($(jiage)[i]).find(".jiage").html())*parseInt($($(jiage)[i]).find(".jiage").siblings("span").html());
+                            number+=parseInt($($(jiage)[i]).find(".shul").html());
+                        }
+                        var strCookie=$.getCookie("usercart");
+                        var objCookie=JSON.parse(strCookie||"[]");
+                        for(var i=0; i<objCookie.length; i++){
+                            if(objCookie[i].goods_id==$(self).attr("data-info")){
+                                objCookie.splice(i,1);
+                            }
+                        }
+                        $.setCookie("usercart",objCookie);
+                        $(self).parent(".delete").parent(".ui_pattribute").parent(".mycart_pro ").remove();
+                        $(".popcart").children("span").html($(".mycartList").children().length);
+                        if($(".mycartList").children().length==0){
+                            var stri=`<div style="margin:0 auto; color:red; font-size:12px;text-align:center; width: 140px; height:50px; line-height:50px">购物车是空的,快去买买买!</div>`
+                            $(".cartinfobox").html(stri);
+                        }
+                        $("#Jcart_nums").html(number);
+                        $("#Jcart_amount").html(money);
+                        $(".popcart").children("span").html(number);
+                    })
+                }else {
+                    var stri=`<div style="margin:0 auto; color:red; font-size:12px;text-align:center; width: 140px; height:50px; line-height:50px">购物车是空的,快去买买买!</div>`
+                    $(".cartinfobox").html(stri);
+                }
             }
-        });
+        })
     })();
     (function(){
         $(function(){
@@ -222,7 +308,7 @@
     //轮播图 图片 获取
     (function () {
         $.ajax({
-            url: "http://127.0.0.1/FeiHu/server/getpic.php",
+            url: "./../server/getpic.php",
             data: {
                 pic:"轮播图"
             },
@@ -241,7 +327,7 @@
     //限时秒杀 商品 获取
     (function () {
         $.ajax({
-            url:'http://127.0.0.1/FeiHu/server/getgoods.php',
+            url:'./../server/getgoods.php',
             data:{
                 type:"限时秒杀"
             },
@@ -268,7 +354,7 @@
     //手机数码 商品获取
     (function () {
         $.ajax({
-            url:'http://127.0.0.1/FeiHu/server/getgoods.php',
+            url:'./../server/getgoods.php',
             data:{
                 type:"手机数码"
             },
@@ -297,7 +383,7 @@
     //手机数码 品牌 获取图片
     (function () {
         $.ajax({
-            url:"http://127.0.0.1/FeiHu/server/getpic.php",
+            url:"./../server/getpic.php",
             data:{
                 pic:"手机数码品牌"
             },
@@ -317,7 +403,7 @@
     //手机数码 左侧大图 获取图片
     (function () {
         $.ajax({
-            url:"http://127.0.0.1/FeiHu/server/getpic.php",
+            url:"./../server/getpic.php",
             data:{
                 pic:"手机数码大图"
             },
@@ -342,7 +428,7 @@
     //家用电器
     (function () {
         $.ajax({
-            url:'http://127.0.0.1/FeiHu/server/getgoods.php',
+            url:'./../server/getgoods.php',
             data:{
                 type:"家用电器"
             },
@@ -369,7 +455,7 @@
     //家用电器 品牌 获取图片
     (function () {
         $.ajax({
-            url:"http://127.0.0.1/FeiHu/server/getpic.php",
+            url:"./../server/getpic.php",
             data:{
                 pic:"家用电器品牌"
             },
@@ -390,7 +476,7 @@
     //家用电器 左侧大图 获取图片
     (function () {
         $.ajax({
-            url:"http://127.0.0.1/FeiHu/server/getpic.php",
+            url:"./../server/getpic.php",
             data:{
                 pic:"家用电器大图"
             },

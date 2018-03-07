@@ -15,8 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userpwd = $_REQUEST["userpwd"];
     $conn = new mysqli("127.0.0.1", "root", "", "feihu");
     mysqli_query($conn, "set names utf8");
-    $sql = "SELECT*FROM userinfo WHERE u_username='" . $username . "' AND u_userpwd='" . $userpwd . "'";
-    $result = $conn->query($sql);
+    $sql = "SELECT*FROM userinfo WHERE u_username=? AND u_userpwd=?";
+    $stmt=$conn->prepare($sql);
+    $stmt->bind_param("ss",$username,$userpwd);
+    $stmt->execute();
+    $result=$stmt->get_result();
     $resultArr = Array();
     if ($result->num_rows == 1) {
         $resultArr["status"] = 1;
@@ -29,4 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     print_r(json_encode($resultArr));
 }
+$conn->close();
+$stmt->close();
 
