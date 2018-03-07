@@ -72,6 +72,7 @@ body {
   height: 22px;
   float: right;
   margin-top: 7px;
+  position: relative;
 }
 .nav .cart-con a {
   font-size: 12px;
@@ -435,77 +436,6 @@ body {
 .mobile-phone .brand ul li:hover {
   opacity: 0.5;
 }
-.footer {
-  background: #fff;
-  margin-top: 30px;
-  padding-top: 20px;
-}
-.footer .service {
-  float: left;
-  width: 250px;
-  padding-top: 20px;
-  color: #999;
-}
-.footer .service .service_tel {
-  padding-left: 35px;
-  line-height: 24px;
-  vertical-align: middle;
-}
-.footer .service .service_tel strong {
-  font-size: 16px;
-  color: #333;
-  font-weight: normal;
-}
-.footer .service .service_time {
-  position: relative;
-  padding-top: 6px;
-  padding-left: 100px;
-}
-.footer .service .service_time .time {
-  padding-top: 8px;
-}
-.footer .service .service_time .time em {
-  color: #FF6600;
-  font-style: normal;
-}
-.footer .service .service_time .icon {
-  position: absolute;
-  left: 40px;
-  top: 8px;
-  width: 52px;
-  height: 50px;
-  background: url(../images/goodsinfo/sl_footer.png?v=0516) no-repeat 0 -47px;
-}
-.footer .service_guide dl {
-  float: left;
-  width: 164px;
-  height: 150px;
-  border-left: solid 1px #ddd;
-  padding-left: 15px;
-}
-.footer .service_guide dl dt {
-  height: 22px;
-  line-height: 22px;
-  margin-bottom: 4px;
-  font-size: 14px;
-  color: #000;
-}
-.footer .service_guide dl dd {
-  height: 20px;
-  line-height: 20px;
-  overflow: hidden;
-}
-.footer .service_guide dl dd a {
-  color: #999999;
-}
-.footer .bottom {
-  line-height: 18px;
-  color: #999;
-  padding-top: 20px;
-}
-.footer .bottom a {
-  color: #666;
-}
 .fixed {
   display: none;
   position: absolute;
@@ -530,4 +460,85 @@ body {
   width: 60px;
   height: 60px;
   cursor: pointer;
+}
+.cartinfobox {
+  position: absolute;
+  top: 24px;
+  width: 217px;
+  right: -9px;
+  padding: 6px 0 5px;
+  border: 1px solid #c7012c;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  display: none;
+}
+.cartinfobox .mycartList .mycart_pro {
+  position: relative;
+  padding: 6px 10px 4px 60px;
+  overflow: hidden;
+}
+.cartinfobox .mycartList .mycart_pro .ui_pimg {
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+.cartinfobox .mycartList .mycart_pro .ui_pimg .img {
+  width: 45px;
+  height: 45px;
+  border-color: #ccc;
+}
+.cartinfobox .mycartList .mycart_pro .ui_pattribute li {
+  height: 16px;
+  line-height: 16px;
+  overflow: hidden;
+}
+.cartinfobox .mycartList .mycart_pro .ui_pattribute .ui_pname a {
+  color: #333;
+}
+.cartinfobox .mycartList .mycart_pro .ui_pattribute .ui_pprice_e {
+  color: #e30303;
+  font-size: 16px;
+  font-family: Microsoft Yahei;
+  font-weight: bold;
+}
+.cartinfobox .mycartList .mycart_pro .ui_pattribute .delete {
+  text-align: right;
+}
+.cartinfobox .mycartList .mycart_pro .ui_pattribute .delete a {
+  color: #999;
+  text-decoration: underline;
+  float: right;
+}
+.cartinfobox #Jcart_haveItem {
+  font-size: 12px;
+}
+.cartinfobox #Jcart_haveItem .mycart_total {
+  border-top: 1px dotted #cccccc;
+  padding: 5px 10px;
+}
+.cartinfobox #Jcart_haveItem .mycart_total span {
+  margin-right: 10px;
+}
+.cartinfobox #Jcart_haveItem .mycart_total span em {
+  color: #c7012c;
+  font-weight: bold;
+}
+.cartinfobox .mycart_pay {
+  padding-bottom: 6px;
+}
+.cartinfobox .mycart_pay a {
+  display: block;
+  width: 110px;
+  height: 31px;
+  line-height: 31px;
+  padding: 0 0 0 10px;
+  background: #c60029;
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 auto;
+  float: none;
 }

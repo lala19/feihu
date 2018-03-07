@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.idcode.css">
     <script src="js/lib/jquery.idcode.js"></script>
     <script src="js/lib/Validform_v4.0.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
     <script src="js/register.js"></script>
     <script src="js/header.js"></script>
 </head>
@@ -64,7 +65,7 @@
         <div class="login-logo">
             <a href="#"><img src="images/login/login_logo.jpg" alt=""></a>
         </div>
-        <form method="post" class="login-form" id="myform">
+        <form class="login-form" id="myform">
             <div class="login-title">
                 <p>用户注册</p>
             </div>
@@ -108,7 +109,7 @@
                     </dl>
                     <dl>
                         <dt></dt>
-                        <dd><span id="idcode"></span><a href="#">换张图</a></dd>
+                        <dd><span id="idcode"></span></dd>
                         <dd></dd>
                     </dl>
                     <dl>
@@ -120,7 +121,7 @@
                 </div>
                 <div class="link"></div>
                 <div class="bottom">
-                    <button id="btn-reg"></button>
+                    <button id="btn-reg" type="submit"></button>
                 </div>
             </div>
         </form>
@@ -139,49 +140,3 @@
 </div>
 </body>
 </html>
-<script>
-    $("input").blur(function(){
-        $(this).removeClass("bd-blue");
-    });
-    $("input").focus(function(){
-        $(this).addClass("bd-blue");
-    });
-    $.idcode.setCode();   //加载生成验证码方法
-
-    $("#btn-reg").click(function(){
-        var IsBy = $.idcode.validateCode()  //调用返回值，返回值结果为true或者false
-        if(IsBy){
-            $("#codetxt").html("");
-        }else {
-            $("#codetxt").html("验证码有误");
-        }
-    })
-    $("#userName").change(function(){
-        $.ajax({
-            url: "http://127.0.0.1/FeiHu/server/username.php",
-            data: {
-                username: $("#userName").val(),
-            },
-            dataType: "json",
-            type: "post",
-        }).done(function (res) {
-            if(res){
-                $(".usernamemsg").html( '通过信息验证！');
-            }else {
-                $(".usernamemsg").html('用户名已存在!');
-            }
-        });
-    });
-
-    $(function(){
-
-        /*
-        $(".registerform").Validform();  //就这一行代码！;
-        */
-
-        $(".login-form").Validform({
-            tiptype:2 //提示类型, 默认是1:无右侧文字提示, 2表示有右侧文字提示
-        });
-
-    })
-</script>

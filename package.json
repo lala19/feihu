@@ -18,6 +18,7 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "requirejs": "^2.3.5"
   }
 }

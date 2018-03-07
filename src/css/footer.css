@@ -1,0 +1,71 @@
+.footer {
+  background: #fff;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+.footer .service {
+  float: left;
+  width: 250px;
+  padding-top: 20px;
+  color: #999;
+}
+.footer .service .service_tel {
+  padding-left: 35px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+.footer .service .service_tel strong {
+  font-size: 16px;
+  color: #333;
+  font-weight: normal;
+}
+.footer .service .service_time {
+  position: relative;
+  padding-top: 6px;
+  padding-left: 100px;
+}
+.footer .service .service_time .time {
+  padding-top: 8px;
+}
+.footer .service .service_time .time em {
+  color: #FF6600;
+  font-style: normal;
+}
+.footer .service .service_time .icon {
+  position: absolute;
+  left: 40px;
+  top: 8px;
+  width: 52px;
+  height: 50px;
+  background: url(../images/goodsinfo/sl_footer.png?v=0516) no-repeat 0 -47px;
+}
+.footer .service_guide dl {
+  float: left;
+  width: 164px;
+  height: 150px;
+  border-left: solid 1px #ddd;
+  padding-left: 15px;
+}
+.footer .service_guide dl dt {
+  height: 22px;
+  line-height: 22px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #000;
+}
+.footer .service_guide dl dd {
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.footer .service_guide dl dd a {
+  color: #999999;
+}
+.footer .bottom {
+  line-height: 18px;
+  color: #999;
+  padding-top: 20px;
+}
+.footer .bottom a {
+  color: #666;
+}

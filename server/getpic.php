@@ -15,6 +15,7 @@ $conn = new mysqli("127.0.0.1", "root", "", "feihu");
 mysqli_query($conn, "set names utf8");
 $sql = "SELECT * FROM picinfo
 WHERE pic_type='".$pic_name."'";
+
 $result = $conn->query($sql);
 $rows=array();
 while($row=$result->fetch_assoc()){

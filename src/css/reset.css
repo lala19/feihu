@@ -9,3 +9,4 @@ a{ text-decoration:none; }
 img{ border:none; }
 input, button{ outline:none; border:none; }
 .clearfix:after{ content:"."; clear:both; overflow:hidden; display:block; visibility:hidden; height:0; font-size:0; }
+em,i{font-style:normal;}

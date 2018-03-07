@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/goodsinfo.css">
     <script src="js/lib/jquery-3.3.1.js"></script>
+    <script src="js/jquery-cookie-1.0.0.js"></script>
     <script src="js/goodsinfo.js"></script>
     <script src="js/header.js"></script>
 </head>
@@ -701,8 +702,8 @@
 <div class="con-wrapper">
     <div class="main clearfix">
         <div class="con-wrapper-title clearfix">
-            <a href="#">限时抢购</a>
-            <span>Viken 维肯 安卓 尼龙数据线</span>
+            <a href="#" class="goodstype"></a>
+            <span class="goodstypeinfo"></span>
         </div>
         <div class="goodview">
             <!--小图-->
@@ -710,7 +711,7 @@
                 <div class="imgview-con">
                     <!--大图-->
                     <!--http://image.efeihu.com/images/pdtimage/img_middle/d81dbd20-97f8-4fe3-bb1a-1916e322693a.jpg-->
-                    <img class="middleimg" src="http://image.efeihu.com/images/wap/android/fb715b9d-2dd6-4647-ace3-488c27babb53.jpg" alt="">
+                    <img class="middleimg" src="" alt="">
                     <div class="smallarea"></div>
                 </div>
             </div>
@@ -750,15 +751,15 @@
         </div>
         <div class="goodinfo">
             <div class="goodinfo-title">
-                <p>Viken 维肯 安卓 尼龙数据线 银色</p>
-                <span>数据线</span>
-            </div>
-            <div class="price">
-                <p>飞 虎 价：<span>¥</span><b>3488</b></p>
-                <h6>本次消费最多可用9000点积分(抵现金：¥300元)
-                    <a href="#">如何获取积分？</a>
-                </h6>
-            </div>
+                <p class="goodname"></p>
+                <span class="goodstypeinfo"></span>
+        </div>
+        <div class="price">
+            <p>飞 虎 价：<span>¥</span><b class="feihuprice"></b></p>
+            <h6>本次消费最多可用9000点积分(抵现金：¥300元)
+                <a href="#">如何获取积分？</a>
+            </h6>
+        </div>
             <div class="buyerinfo">
                 <p>温馨提示：该商品不支持 <span>货到付款</span></p>
                 <div class="kucun clearfix">
@@ -801,17 +802,14 @@
             <div class="buy clearfix">
                 <div class="good-color">
                     <span>选择颜色:</span>
-                    <ul onselectstart="return false">
-                        <li>土豪金</li>
-                        <li class="currcolor">银色</li>
+                    <ul onselectstart="return false" class="typecolor">
+
                     </ul>
                 </div>
                 <div class="good-type">
                     <span>选择:</span>
-                    <ul onselectstart="return false">
-                        <li>Type-c</li>
-                        <li>安卓</li>
-                        <li class="currcolor">苹果</li>
+                    <ul onselectstart="return false" class="typenum">
+
                     </ul>
                 </div>
                 <div class="good-num">
@@ -1310,7 +1308,7 @@
             </div>
             <div class="cart-hot-title">
                 <span>飞虎精选</span>
-                <a href="index.html">查看您可能喜欢的商品</a>
+                <a href="index.php">查看您可能喜欢的商品</a>
             </div>
             <div class="cart-hot-list">
                 <div class="cart-hot-list-item">

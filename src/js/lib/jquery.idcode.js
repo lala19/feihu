@@ -16,9 +16,9 @@
 (function($){
 	var settings = {
 			e	 		: 'idcode',
-			codeType 	: { name : 'follow', len: 4},
-			codeTip		: 'refresh?',
-			inputID		: 'Txtidcode'          //引用验证码输入框Id
+			codeType 	: { name : 'follow', len: 5},//len是修改验证码长度的
+			codeTip		: '换个验证码?',
+			inputID		: 'Txtidcode'//验证元素的ID
 		};
 	
 	var _set = {
@@ -43,9 +43,8 @@
 				inputV=$('#' + settings.inputID).val();
 			}else{
 				inputV=$(_set.store).val();
-			}
-			
-			if(inputV == _storeData(_set.storeLable, null)){
+			}	
+			if(inputV.toUpperCase() == _storeData(_set.storeLable, null).toUpperCase()){//修改的不区分大小写
 				return true;
 			}else{
 				_setCodeStyle("#"+settings.e, settings.codeType.name, settings.codeType.len);				
@@ -76,7 +75,7 @@
 		}
 		htmlCode+='<div id="ehong-code" class="ehong-idcode-val ehong-idcode-val';
 		htmlCode+=String(randNum);
-		htmlCode+='" href="#" onblur="return false" onfocus="return false" oncontextmenu="return false" onclick="$.idcode.setCode()">' + _setStyle(codeObj) + '</div>' + '<span id="ehong-code-tip-ck" class="ehong-code-val-tip" onclick="$.idcode.setCode()">'/*+ settings.codeTip*/ +'</span>';
+		htmlCode+='" href="#" onblur="return false" onfocus="return false" oncontextmenu="return false" onclick="$.idcode.setCode()">' + _setStyle(codeObj) + '</div>' + '<span id="ehong-code-tip-ck" class="ehong-code-val-tip" onclick="$.idcode.setCode()">'+ settings.codeTip +'</span>';
 		$(eid).html(htmlCode);
 		_storeData(_set.storeLable, codeObj);		
 	}

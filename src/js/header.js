@@ -1,16 +1,21 @@
 ((function($){
-    $(".account").hover(function(){
-        $(this).addClass("account-curr");
-        $(this).children("ul").show();
-    },function(){
-        $(this).removeClass("account-curr");
-        $(this).children("ul").hide();
+
+    //我的账户 下拉菜单
+    $(".account,.navigation").on("mouseenter",function(){
+        $.rotate180($(this).children("b"));
+        $(this).css({
+            "background":"#fff",
+            "border-left":"solid 1px #ccc",
+            "border-right":"solid 1px #ccc",
+        });
+        $(this).children("ul").css("display","block");
     });
-    $(".navigation").hover(function(){
-        $(this).addClass("account-curr");
-        $(this).children("ul").show();
-    },function(){
-        $(this).removeClass("account-curr");
-        $(this).children("ul").hide();
+    $(".account,.navigation").on("mouseleave",function(){
+        $.cancelrotate180($(this).children("b"));
+        $(this).css({
+            "background":"none",
+            "border":"none"
+        });
+        $(this).children("ul").css("display","none");
     });
 }))(jQuery);
