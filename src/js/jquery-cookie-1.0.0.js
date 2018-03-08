@@ -7,7 +7,7 @@
             }
             if(typeof(day) == "number"){
                 var date = new Date();
-                date.setDate(date.getDate() + day)
+                date.setDate(date.getDate() + day);
                 strCookie += ";expires=" + date;
             }
             if(path){

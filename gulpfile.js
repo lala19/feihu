@@ -25,7 +25,7 @@ gulp.task("AutoFxcssmin",function(){
            //        transform: rotate(45deg);
            remove:true //是否去掉不必要的前缀 默认：true
        }))
-       .pipe(gulp.dest("dist/css"))
+       .pipe(gulp.dest("../dist/css"))
 });
 
     uglify = require('gulp-uglify');
@@ -34,8 +34,6 @@ gulp.task('jsmin', function () {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
-
-
  /*   less = require('gulp-less');
 
 gulp.task('testLess', function () {

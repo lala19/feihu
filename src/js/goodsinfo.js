@@ -57,10 +57,13 @@
                     location:action
                 };
                 objCookie.unshift(obj);
+                if(objCookie.length>=8){
+                    objCookie.splice(7,1);
+                }
                 $.setCookie("browser",JSON.stringify(objCookie),1);
                 if(objCookie.length>=1){
                     $(".recently-item").html("");
-                    for(var i=0; i<6; i++){
+                    for(var i=0; i<objCookie.length; i++){
                         var goodsname=objCookie[i].goods_name;
                         var str=`<li>
                                 <div class="rank-pro-name">${goodsname}</div>
@@ -177,36 +180,78 @@
         })();
         //放大镜图片列表
         (function(){
-            var middleimg = [
-                "http://image.efeihu.com/images/wap/android/fb715b9d-2dd6-4647-ace3-488c27babb53.jpg",
-                "http://image.efeihu.com/images/wap/android/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
-                "http://image.efeihu.com/images/wap/android/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg",
-                "http://image.efeihu.com/images/wap/android/e09e09ca-3f0f-4244-a91f-75284d6d37f5.jpg",
-                "http://image.efeihu.com/images/wap/android/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
-                "http://image.efeihu.com/images/wap/android/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg",
-            ];
-            var bigimg = [
-                "images/goodsinfo/bigview.jpg",
-                "http://image.efeihu.com/images/pdtimage/img_middle/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
-                "http://image.efeihu.com/images/pdtimage/img_middle/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg",
-                "http://image.efeihu.com/images/pdtimage/img_middle/e09e09ca-3f0f-4244-a91f-75284d6d37f5.jpg",
-                "http://image.efeihu.com/images/pdtimage/img_middle/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
-                "http://image.efeihu.com/images/pdtimage/img_middle/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg"
-            ];
-            $(".img-list-con").children().on("mouseenter", function(){
-                var index = $(this).index();
-                $(this).addClass("curr").siblings("li").removeClass("curr");
-                $(".middleimg").attr("src", middleimg[index]);
-                $("#bigimg").attr("src", bigimg[index]);
-            });
-            $(".imgview-list-left,.imgview-list-right").on("click", function(){
-                console.log(parseInt($(".img-list-con").css("left")));
-                if(parseInt($(".img-list-con").css("left")) == 6){
-                    $(".img-list-con").css("left", "-274px");
-                } else {
-                    $(".img-list-con").css("left", "6px");
+            var action = window.location.href;
+            var actionid = action.split("?")[1].split("=")[1];
+            $.ajax({
+                url : "./../server/goodsinfoimg.php",
+                type : "post",
+                data : {
+                    "goodsid" : actionid
+                },
+                dataType : "json"
+            }).then(function(res){
+                /*console.log(res);*/
+                if(res[0].goods_imgs){
+                   var obj=JSON.parse(res[0].goods_imgs);
+                   var middleimg=[];
+                   var bigimg=[];
+                    for(var i=0; i<parseInt(obj.img_num); i++){
+                        var strS = "images/goodsimg/"+obj.img_id+"-s-"+(i+1)+".jpg";
+                        var strM = "images/goodsimg/"+obj.img_id+"-m-"+(i+1)+".jpg";
+                        middleimg.push(strM);
+                        bigimg.push(strM);
+                        $(".img-list-con").children("li").eq(i).children("img").attr("src",strS);
+                    }
+                    $(".img-list-con").children().on("mouseenter", function(){
+                        var index = $(this).index();
+                        $(this).addClass("curr").siblings("li").removeClass("curr");
+                        $(".middleimg").attr("src", middleimg[index]);
+                        $("#bigimg").attr("src", bigimg[index]);
+                    });
+                    $(".imgview-list-left,.imgview-list-right").on("click", function(){
+                        console.log(parseInt($(".img-list-con").css("left")));
+                        if(parseInt($(".img-list-con").css("left")) == 6){
+                            $(".img-list-con").css("left", "-274px");
+                        } else {
+                            $(".img-list-con").css("left", "6px");
+                        }
+                    });
+                }else {
+                    var middleimg = [
+                        "http://image.efeihu.com/images/wap/android/fb715b9d-2dd6-4647-ace3-488c27babb53.jpg",
+                        "http://image.efeihu.com/images/wap/android/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
+                        "http://image.efeihu.com/images/wap/android/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg",
+                        "http://image.efeihu.com/images/wap/android/e09e09ca-3f0f-4244-a91f-75284d6d37f5.jpg",
+                        "http://image.efeihu.com/images/wap/android/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
+                        "http://image.efeihu.com/images/wap/android/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg",
+                    ];
+                    var bigimg = [
+                        "images/goodsinfo/bigview.jpg",
+                        "http://image.efeihu.com/images/pdtimage/img_middle/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
+                        "http://image.efeihu.com/images/pdtimage/img_middle/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg",
+                        "http://image.efeihu.com/images/pdtimage/img_middle/e09e09ca-3f0f-4244-a91f-75284d6d37f5.jpg",
+                        "http://image.efeihu.com/images/pdtimage/img_middle/7946ed4a-55fa-49fc-ada5-2579b93bfa64.jpg",
+                        "http://image.efeihu.com/images/pdtimage/img_middle/07d41142-ac31-4880-b5cb-c6b0517467f8.jpg"
+                    ];
+                    $(".img-list-con").children().on("mouseenter", function(){
+                        var index = $(this).index();
+                        $(this).addClass("curr").siblings("li").removeClass("curr");
+                        $(".middleimg").attr("src", middleimg[index]);
+                        $("#bigimg").attr("src", bigimg[index]);
+                    });
+                    $(".imgview-list-left,.imgview-list-right").on("click", function(){
+                        console.log(parseInt($(".img-list-con").css("left")));
+                        if(parseInt($(".img-list-con").css("left")) == 6){
+                            $(".img-list-con").css("left", "-274px");
+                        } else {
+                            $(".img-list-con").css("left", "6px");
+                        }
+                    });
+
                 }
+
             });
+
         })();
         //购物车弹出框关闭
         (function(){

@@ -1,0 +1,10 @@
+define("config",[],function(){
+    requirejs.config({
+        baseUrl:"./js",
+        paths:{
+            "jquery":"lib/jquery-1.11.1.min",
+            "cookie":"jquery-cookie-1.0.0",
+            "tools":"lib/jquery-tools"
+        }
+    });
+});

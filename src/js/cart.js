@@ -167,6 +167,12 @@
                                 dataType : "json"
                             }).then(function(res){
                                 if(res.status == 1){
+                                    var p_tbody = $(".tbody").children("tr");
+                                    var price_res = 0;
+                                    for(var i = 0; i < p_tbody.length; i++){
+                                        price_res += parseFloat($(p_tbody[i]).children(".col_total").children("span").children("em").html());
+                                    }
+                                    $(".count-res").children("span").children("em").html(price_res);
                                     console.log("删除一条成功!")
                                 }
                             });
@@ -325,9 +331,22 @@
                         for(var i=0; i<objCookie.length; i++){
                             if(objCookie[i].goods_id==$(this).attr("data-info")){
                                 objCookie.splice(i,1);
+                                var p_tbody = $(".tbody").children("tr");
+                                var price_res = 0;
+                                for(var i = 0; i < p_tbody.length; i++){
+                                    price_res += parseFloat($(p_tbody[i]).children(".col_total").children("span").children("em").html());
+                                }
+                                $(".count-res").children("span").children("em").html(price_res);
+                                console.log("删除一条成功");
+                                if(i==0){
+                                    $.removeCookie("usercart");
+                                    break;
+                                }else {
+                                    $.setCookie("usercart", objCookie);
+                                    break;
+                                }
                             }
                         }
-                        $.setCookie("usercart",objCookie);
                     });
                 })();
                 //清空购物车
