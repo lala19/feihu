@@ -21,7 +21,17 @@
                 session_start();
                 if (!empty($_SESSION["userInfo"])) {
                     $row = $_SESSION["userInfo"];
-                    $str="亲爱的 <a href='javascript:void(0)'>" .$row. "</a> 下午好！ <a href='javascript:void(0)' onclick='exit()' id='uexit'>退出</a>";
+                    $h=date('G');
+                    if ($h<11){
+                        $str="上午好";
+                    }else if ($h<13){
+                        $str="中午好";
+                    }else if ($h<17){
+                        $str="下午好";
+                    }else{
+                        $str="晚上好";
+                    };
+                    $str="亲爱的 <a href='javascript:void(0)'>" .$row. "</a> ".$str."！ <a href='javascript:void(0)' onclick='exit()' id='uexit'>退出</a>";
             print_r($str);
             }else{
             $str="<span>您好，欢迎来到飞虎乐购 <a href=\"login.html\">安全登录</a></span> <span> 还没加入我们？<a href=\"register.html\">免费注册</a></span>";
@@ -36,7 +46,7 @@
                     <b></b>
                     <ul class="account-hide">
                         <li>
-                            <a href="#">账户首页</a>
+                            <a href="index.html">账户首页</a>
                         </li>
                         <li>
                             <a href="#">我的收藏</a>

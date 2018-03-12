@@ -115,3 +115,6 @@
   padding-top: 10px;
   border-top: 1px solid #ccc;
 }
+label {
+  color: red;
+}
