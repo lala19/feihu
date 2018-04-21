@@ -1,4 +1,5 @@
 # feihu
 
-# animate萌新代码
-## 一个简单的电商页面php+sql+jquery
+# animate
+
+一个电商练手项目php+sql+jquery
