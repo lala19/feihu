@@ -1,3 +1,4 @@
 # feihu
 
-一个电商练手项目php+sql+jquery
+php练手  
+php+sql+jquery
