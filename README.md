@@ -1,3 +1,3 @@
 # feihu
 
-php+sql+jquery
+php+mysql+jquery
